@@ -1,0 +1,8 @@
+<li class="post-item">
+  <a href="{{ include.post.url | relative_url }}">
+    <span class="post-date">{{ include.post.date | date: '%Y.%m.%d' }}</span>
+    <span class="post-title">{{ include.post.title }}</span>
+    <span class="post-category">{% include category-names.html categories=include.post.categories %}</span>
+    <span class="post-arrow" aria-hidden="true">→</span>
+  </a>
+</li>
