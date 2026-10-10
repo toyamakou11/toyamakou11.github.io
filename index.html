@@ -2,25 +2,22 @@
 layout: default
 title: ホーム
 ---
-<section class="hero">
-  <p class="eyebrow">開発とアート</p>
-  <h1>つくる過程を、<br>記録する。</h1>
-  <p class="hero-copy">開発で見つけたことと、アート制作の試行錯誤を記録するブログです。</p>
-  <a class="text-link" href="{{ '/about/' | relative_url }}">ブログについて <span aria-hidden="true">→</span></a>
+<section class="profile" aria-labelledby="profile-name">
+  <p class="eyebrow">プロフィール</p>
+  <h1 id="profile-name">toyama kou</h1>
+  <p class="profile-copy">ゲームサーバー開発者。クライアント開発とテクニカルアートへの転向を準備中。</p>
 </section>
 
-<section class="section-block" aria-labelledby="recent-title">
+<section class="section-block" aria-labelledby="posts-title">
   <div class="section-heading">
     <div>
-      <p class="eyebrow">記事</p>
-      <h2 id="recent-title">最近の記事</h2>
+      <p class="eyebrow">記事一覧</p>
+      <h2 id="posts-title">記事</h2>
     </div>
-    <a class="text-link" href="{{ '/posts/' | relative_url }}">すべての記事 <span aria-hidden="true">→</span></a>
   </div>
-  {% assign recent_posts = site.posts | slice: 0, 5 %}
-  {% if recent_posts.size > 0 %}
+  {% if site.posts.size > 0 %}
     <ul class="post-list">
-      {% for post in recent_posts %}
+      {% for post in site.posts %}
         {% include post-item.html post=post %}
       {% endfor %}
     </ul>
