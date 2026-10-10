@@ -15,10 +15,9 @@
         <div class="shell header-inner">
           <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
           <nav class="site-nav" aria-label="メインナビゲーション">
-            <a href="{{ '/posts/' | relative_url }}">記事</a>
+            <a href="{{ '/' | relative_url }}">ホーム</a>
             <a href="{{ '/categories/development/' | relative_url }}">開発</a>
             <a href="{{ '/categories/art/' | relative_url }}">アート</a>
-            <a href="{{ '/about/' | relative_url }}">このブログ</a>
           </nav>
         </div>
       </header>
@@ -27,8 +26,7 @@
       </main>
       <footer class="site-footer">
         <div class="shell footer-inner">
-          <span>© {{ site.time | date: '%Y' }} {{ site.title }}</span>
-          <a href="{{ '/' | relative_url }}">トップへ戻る</a>
+          <span>© {{ site.time | date: '%Y' }} toyama kou</span>
         </div>
       </footer>
     </div>
