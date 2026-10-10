@@ -1,0 +1,15 @@
+<section class="page-intro">
+  <p class="eyebrow">CATEGORY</p>
+  <h1>{{ page.category_label }}</h1>
+  <p>{{ page.category_label }}に関する記事をまとめています。</p>
+</section>
+{% assign category_posts = site.posts | where_exp: 'post', "post.categories contains page.category_key" %}
+{% if category_posts.size > 0 %}
+  <ul class="post-list post-list-page">
+    {% for post in category_posts %}
+      {% include post-item.html post=post %}
+    {% endfor %}
+  </ul>
+{% else %}
+  <p class="empty-state">記事を準備しています。</p>
+{% endif %}

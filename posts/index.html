@@ -1,0 +1,19 @@
+---
+layout: default
+title: 記事一覧
+permalink: /posts/
+---
+<section class="page-intro">
+  <p class="eyebrow">JOURNAL</p>
+  <h1>記事一覧</h1>
+  <p>開発とアート制作の記録です。</p>
+</section>
+{% if site.posts.size > 0 %}
+  <ul class="post-list post-list-page">
+    {% for post in site.posts %}
+      {% include post-item.html post=post %}
+    {% endfor %}
+  </ul>
+{% else %}
+  <p class="empty-state">記事を準備しています。</p>
+{% endif %}

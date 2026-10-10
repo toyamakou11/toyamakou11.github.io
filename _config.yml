@@ -1,0 +1,16 @@
+title: 開発とアートの記録
+description: 開発とアート制作の記録をまとめるブログです。
+url: https://toyamakou11.github.io
+baseurl: ""
+lang: ja
+timezone: Asia/Tokyo
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/
+plugins:
+  - jekyll-seo-tag
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
