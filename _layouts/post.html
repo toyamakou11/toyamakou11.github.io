@@ -5,10 +5,29 @@ layout: default
   <header class="article-header">
     <p class="eyebrow">{% include category-names.html categories=page.categories %}</p>
     <h1>{{ page.title }}</h1>
-    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y年%m月%d日' }}</time>
+    <div class="article-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y-%m-%d' }}</time>
+      {% if page.author %}<span>{{ page.author }}</span>{% endif %}
+    </div>
   </header>
   <div class="prose">
     {{ content }}
   </div>
+  {% if page.previous or page.next %}
+    <nav class="post-navigation" aria-label="記事間の移動">
+      <div class="post-navigation-item">
+        {% if page.previous %}
+          <span>前の記事</span>
+          <a href="{{ page.previous.url | relative_url }}">{{ page.previous.title }}</a>
+        {% endif %}
+      </div>
+      <div class="post-navigation-item next-post">
+        {% if page.next %}
+          <span>次の記事</span>
+          <a href="{{ page.next.url | relative_url }}">{{ page.next.title }}</a>
+        {% endif %}
+      </div>
+    </nav>
+  {% endif %}
   <a class="back-link" href="{{ '/posts/' | relative_url }}">記事一覧へ戻る</a>
 </article>
